@@ -5,9 +5,6 @@ import time
 import json
 import aiofiles
 import logging
-import hashlib
-import platform
-import ssl
 
 from . import rolimon
 from . import user
