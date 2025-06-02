@@ -7,3 +7,6 @@ This was used to be a paid bot but due to the vps expiring and basically wiping 
 Do not SELL or claim OWNERSHIP :D
 
 Tutorial at 15 stars
+
+
+join for help https://discord.gg/SwCsTNRxUC 
