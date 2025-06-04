@@ -145,4 +145,5 @@ Example structure:
 
 
 
-yes bro i used chatgpt for this file fuck you
+### PLS STAR THIS ⭐
+every 30 stars i will do an update including every suggestion
