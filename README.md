@@ -35,7 +35,6 @@ Example structure:
 
 ```
 {
-    "key": "",
     "accounts": [
         {
             "account": {
@@ -89,8 +88,6 @@ Example structure:
 
 # Configuration Breakdown
 
-## 🔑 Key
-- `"key"`: Your authentication key (leave blank if key auth is disabled).
 
 ## 🧾 Account Settings
 - `"cookie"`: Your Roblox .ROBLOSECURITY cookie. Use a browser extension like "Cookie Editor" to find and copy this.
