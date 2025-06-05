@@ -6,7 +6,7 @@ Currently the most advanced trade bot available.
 
 ❗ DO NOT sell or claim ownership of this project.
 
-💬 Need help? Join the support server: https://discord.gg/SwCsTNRxUC
+💬 Need help? Join the support server: https://discord.gg/SwCsTNRxUC (My main server with all my projects), https://discord.gg/GuWvD24z (Official trade bot server)
 
 
 # Setup
