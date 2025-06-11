@@ -163,11 +163,11 @@ async def decline(self, trade_id):
 async def trades_watcher(self):
     completed_trades = await scrape_trades_completed_inactive(self, "completed")
     for trade_id in completed_trades[0]["data"]:
-        self.completed_trades.append(trade_id['id'])
+        self.all_processed_trades.append(trade_id['id'])
     
     inactive_trades = await scrape_trades_completed_inactive(self, "inactive")
     for trade_id in inactive_trades[0]["data"]:
-        self.inactive_trades.append(trade_id['id'])
+        self.all_processed_trades.append(trade_id['id'])
     
     
     while True:
@@ -177,14 +177,13 @@ async def trades_watcher(self):
                 if not scraped_trades[1] == 200:
                     continue
                 for trade_id in scraped_trades[0]["data"]:
-                    if scrape_type == "inactive" and trade_id['id'] not in self.inactive_trades or scrape_type == "completed" and trade_id['id'] not in self.completed_trades:
+                    if scrape_type == "inactive" and trade_id['id'] not in self.all_processed_trades or (scrape_type == "completed" and trade_id['id'] not in self.all_processed_trades):
+                        self.all_processed_trades.append(trade_id['id'])
                         async with aiohttp.ClientSession() as session:
                             json_data = await (await session.get(f"https://trades.roblox.com/v1/trades/{trade_id['id']}", cookies={".ROBLOSECURITY": self.cookie})).json()
                             await self.send_webhook_notification(await generate_trade_content(self, json_data))
-                        if scrape_type == "inactive":
-                            self.inactive_trades.append(trade_id['id'])
-                        else:
-                            self.completed_trades.append(trade_id['id'])
+                        if scrape_type == "completed":
+                            await self.update_limiteds()
                             
             except:
                 pass

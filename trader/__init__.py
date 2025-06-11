@@ -47,8 +47,7 @@ class bot:
         self.xcsrf_token = None
         self.last_generated_time = 0
         
-        self.completed_trades = []
-        self.inactive_trades = []
+        self.all_processed_trades = []
         
         self.item_price = {}
 
@@ -141,12 +140,11 @@ class bot:
             limiteds_value[item_id] = item_data
         for limited in self.limiteds:
             limited = str(limited)
-            for _ in range(int(self.limiteds_value_updater_sleep_time)):
-                async with aiofiles.open("values.json", "r") as f:
-                    data = json.loads(await f.read())
-                    for item_id, value in data.items():
-                        if item_id in limiteds_value and int(value) != limiteds_value[item_id][3]:
-                            limiteds_value[item_id][3] = int(value)
+            async with aiofiles.open("values.json", "r") as f:
+                data = json.loads(await f.read())
+                for item_id, value in data.items():
+                    if item_id in limiteds_value and int(value) != limiteds_value[item_id][3]:
+                        limiteds_value[item_id][3] = int(value)
         if limiteds_value != self.all_limiteds:
             logging.info("✅ Limiteds updated.")
         self.all_limiteds = limiteds_value
@@ -158,12 +156,6 @@ class bot:
             except Exception as e:
                 logging.error(f"❌ Error updating limiteds: {e}")
             finally:
-                for _ in range(int(self.limiteds_value_updater_sleep_time)):
-                    async with aiofiles.open("values.json", "r") as f:
-                        data = json.loads(await f.read())
-                        for item_id, value in data.items():
-                            if item_id in self.all_limiteds and int(value) != self.all_limiteds[item_id][3]:
-                                self.all_limiteds[item_id][3] = int(value)
                 await asyncio.sleep(60)
 
     async def send_webhook_notification(self, message):
