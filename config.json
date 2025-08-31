@@ -15,7 +15,7 @@
                 },
                 "limiteds_value_updater_sleep_time": 60,
                 "manual_rolimon_items": {
-                    "16477149823": ["Gold Clockwork Headphones", "GCWHP", 4924, 5000, 5000, 4, 2, -1, 1, -1]
+                    "16477149823": ["Gold Clockwork Headphones", "GCWHP", 4924, 6000, 6000, 4, 2, -1, 1, -1]
                 }
             },
             "trade": {
@@ -69,6 +69,7 @@
         }
     ]
 }
+
 
 
 
