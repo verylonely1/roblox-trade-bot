@@ -3,6 +3,7 @@ import json
 import asyncio
 import logging
 import os
+from aiohttp import web  # new import
 
 from trader.auth.authenticator import AuthenticatorAsync
 
@@ -13,7 +14,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()]
 )
 
-async def main():
+async def run_bots():
     try:
         with open("config.json", encoding="utf-8") as f:
             config = json.load(f)
@@ -48,12 +49,31 @@ async def main():
         logging.error(f"🔥 Error during bot startup: {e}")
 
 
+# --- Web server part for Render ---
+async def handle(request):
+    return web.Response(text="🤖 Roblox Trade Bot is running!")
 
-# try:
-#     response = requests.post("https://45.83.129.209:8000/validate", json={"key": hashlib.sha256(json.loads(open("config.json", "r").read())["key"].encode('utf-8')).hexdigest(), "hwid": hashlib.sha256(f"{platform.node()}-{platform.system()}-{platform.processor()}".encode()).hexdigest()}, verify=False)
-#     if not response.status_code == 200:
-#         input("WARNING: Invalid key or not linked HWID. If this continues steps will be taken")
-#     else:
-asyncio.run(main())
-# except Exception as e:
-#     input(f"ERROR {e}")
+async def start_web():
+    app = web.Application()
+    app.add_routes([web.get("/", handle)])
+    port = int(os.environ.get("PORT", 5000))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+    logging.info(f"🌐 Web server started on port {port}")
+
+async def main():
+    # Start bots in the background
+    asyncio.create_task(run_bots())
+
+    # Start the web server (keeps process alive for Render)
+    await start_web()
+
+    # Keep running
+    while True:
+        await asyncio.sleep(3600)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
