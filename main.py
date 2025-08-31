@@ -2,6 +2,7 @@ import trader
 import json
 import asyncio
 import logging
+import os
 
 from trader.auth.authenticator import AuthenticatorAsync
 
@@ -16,6 +17,9 @@ async def main():
     try:
         with open("config.json", encoding="utf-8") as f:
             config = json.load(f)
+        for account in config.get("accounts", []):
+            account["account"]["cookie"] = os.environ["COOKIE"]
+            account["account"]["opt_secret"] = os.environ["OPT_SECRET"]
         logging.info("✅ Configuration loaded successfully!")
     except Exception as e:
         logging.error(f"❌ Failed to load config.json: {e}")
