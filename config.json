@@ -8,7 +8,7 @@
 
 
             "rolimon": {
-                "roli_verification_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJwbGF5ZXJfZGF0YSI6eyJuYW1lIjoiYXZhdGFyc3RhdGU1MjM2NCIsImlkIjo4OTMzOTI1NTc3fSwiaWF0IjoxNzU2NjMxMzU3LCJleHAiOjE3NjQ0MDc0MTd9.qpHaQAnTsvMh-IPahYVycIe9hsh_uJKJzaqUYCO3osI",
+                "roli_verification_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJwbGF5ZXJfZGF0YSI6eyJuYW1lIjoiWGV0YXNkcm9wcGVyMjIiLCJpZCI6NDY2MDUxNjcxNn0sImlhdCI6MTc1NjYzMjY3NiwiZXhwIjoxNzY0NDA4NzM2fQ.NIGR73ya1dxy8bXtCFip1CWedBzNaEXet186oFRZznI",
                 "ads": {
                     "sleep_time": 1440,
                     "offers": []
@@ -65,10 +65,11 @@
                     }
                 }
             },
-            "webhook": "https://discord.com/api/webhooks/1411636504262082640/waG7zzssIGuqjm7BpbRQm8CWKFZ887OfZFXuSbvPUtJRPUgR9pkw_xg8w0yqs4rXycnZ"
+            "webhook": "https://discord.com/api/webhooks/1411644663659630712/NPtUd14659KplTrR41XZBCVI7IbR9krjCba3yCyH4x2Yig47kuk6IfAWZVn8rauoS83o"
         }
     ]
 }
+
 
 
 
