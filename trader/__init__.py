@@ -121,7 +121,7 @@ class bot:
                         if len(offer_items) >= 4:
                             break
                     request_item_ids = []
-                    request_tags = random.sample(["any", "demand", "rares", "rap", "upgrade"], 4)
+                    request_tags = random.sample(["any", "demand", "rares", "rap", "downgrade"], 4)
                 offer_items = offer_items[:4]
                 request_tags = request_tags[:4]
                 if await rolimon.post_ad(self.roli_verification, self.user_id, offer_items, request_item_ids, request_tags):
@@ -186,3 +186,4 @@ class bot:
             rolimon.track_trade_ads(self),
             trades.check_inbound(self),
         )
+
