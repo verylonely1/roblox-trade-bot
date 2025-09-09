@@ -44,7 +44,7 @@
                         "lower_projected_item": 0
                     },
                     "penalties": {
-                        "bulk_penalty_rate": 0.02,
+                        "bulk_penalty_rate": 0,
                         "upgrade_penalty_multiplier": 1.10
                     },
                     "performance": {
@@ -69,6 +69,7 @@
         }
     ]
 }
+
 
 
 
