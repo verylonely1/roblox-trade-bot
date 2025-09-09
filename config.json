@@ -32,7 +32,7 @@
                     },
                     "thresholds": {
                         "min_receiving_value_when_downgrading": 1.07,
-                        "max_giving_value_when_upgrading": 1.07,
+                        "max_giving_value_when_upgrading": 1,
                         "max_edge_value": 1.10,
                         "min_trade_send_value_total": 500
                     },
@@ -69,6 +69,7 @@
         }
     ]
 }
+
 
 
 
