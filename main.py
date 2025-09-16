@@ -3,7 +3,7 @@ import json
 import asyncio
 import logging
 import os
-from aiohttp import web  # new import
+from aiohttp import web
 
 from trader.auth.authenticator import AuthenticatorAsync
 
@@ -18,9 +18,19 @@ async def run_bots():
     try:
         with open("config.json", encoding="utf-8") as f:
             config = json.load(f)
-        for account in config.get("accounts", []):
-            account["account"]["cookie"] = os.environ["COOKIE"]
-            account["account"]["opt_secret"] = os.environ["OPT_SECRET"]
+
+        for index, account in enumerate(config.get("accounts", []), start=1):
+            cookie_env = f"COOKIE_{index}"
+            secret_env = f"OPT_SECRET_{index}"
+
+            account["account"]["cookie"] = os.environ.get(cookie_env, "")
+            account["account"]["opt_secret"] = os.environ.get(secret_env, "")
+
+            if not account["account"]["cookie"]:
+                logging.warning(f"⚠️ Missing {cookie_env} for account #{index}")
+            else:
+                logging.info(f"✅ Loaded {cookie_env} for account #{index}")
+
         logging.info("✅ Configuration loaded successfully!")
     except Exception as e:
         logging.error(f"❌ Failed to load config.json: {e}")
@@ -76,4 +86,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
 
