@@ -1,77 +1,137 @@
 {
-    "accounts": [
-        {
-            "account": {
-                "cookie": "",
-                "opt_secret": ""
-            },
-
-
-            "rolimon": {
-                "roli_verification_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJwbGF5ZXJfZGF0YSI6eyJuYW1lIjoiWGV0YXNkcm9wcGVyMjIiLCJpZCI6NDY2MDUxNjcxNn0sImlhdCI6MTc1NjYzMjY3NiwiZXhwIjoxNzY0NDA4NzM2fQ.NIGR73ya1dxy8bXtCFip1CWedBzNaEXet186oFRZznI",
-                "ads": {
-                    "sleep_time": 1440,
-                    "offers": []
-                },
-                "limiteds_value_updater_sleep_time": 60,
-                "manual_rolimon_items": {
-                    "16477149823": ["Gold Clockwork Headphones", "GCWHP", 4924, 6000, 6000, 4, 2, -1, 1, -1]
-                }
-            },
-            "trade": {
-                "sleep_time": 1,
-                "items": {
-                    "not_for_trade": [2180163807, 1191162539, 13334984, 15857936, 10860580, 20573078, 91675439, 44113968, 11844853, 127238392608990, 99742784495587, 128159229, 11700927610, 82601882965079, 928911381, 96678344, 10159872338, 2620478831, 6807138720, 102611965, 4773579034, 3798248888, 6803404717, 51245998, 2528067691, 3016590511],
-                    "not_accepting": []
-                },
-                "algorithm": {
-                    "modes": {
-                        "value_only": false,
-                        "trade_methods": ["downgrade"],
-                        "rap_only_base": false
-                    },
-                    "thresholds": {
-                        "min_receiving_value_when_downgrading": 1.07,
-                        "max_giving_value_when_upgrading": 1,
-                        "max_edge_value": 1.10,
-                        "min_trade_send_value_total": 500
-                    },
-                    "modifiers": {
-                        "base_divisor": 1200,
-                        "demand_multiplier": 150,
-                        "rare_multiplier": 50,
-                        "lower_rap_only_item": 0.95,
-                        "lower_projected_item": 0
-                    },
-                    "penalties": {
-                        "bulk_penalty_rate": 0,
-                        "upgrade_penalty_multiplier": 1.10
-                    },
-                    "performance": {
-                        "batch_size": 3000,
-                        "max_pairs": 200000
-                    },
-                    "upgrade": {
-                        "min_items": 2,
-                        "max_items": 3
-                    },
-                    "downgrade": {
-                        "min_items": 1,
-                        "max_items": 1
-                    },
-                    "item_ratio_constraints": {
-                        "max_item_ratio_upgrade": 0.75,
-                        "min_item_ratio_upgrade": 0.10
-                    }
-                }
-            },
-            "webhook": "https://discord.com/api/webhooks/1411644663659630712/NPtUd14659KplTrR41XZBCVI7IbR9krjCba3yCyH4x2Yig47kuk6IfAWZVn8rauoS83o"
+  "accounts": [
+    {
+      "account": {
+        "cookie": "",
+        "opt_secret": ""
+      },
+      "rolimon": {
+        "roli_verification_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJwbGF5ZXJfZGF0YSI6eyJuYW1lIjoiWGV0YXNkcm9wcGVyMjIiLCJpZCI6NDY2MDUxNjcxNn0sImlhdCI6MTc1NjYzMjY3NiwiZXhwIjoxNzY0NDA4NzM2fQ.NIGR73ya1dxy8bXtCFip1CWedBzNaEXet186oFRZznI",
+        "ads": {
+          "sleep_time": 1440,
+          "offers": []
+        },
+        "limiteds_value_updater_sleep_time": 60,
+        "manual_rolimon_items": {
+          "16477149823": ["Gold Clockwork Headphones", "GCWHP", 4924, 6000, 6000, 4, 2, -1, 1, -1]
         }
-    ]
+      },
+      "trade": {
+        "sleep_time": 1,
+        "items": {
+          "not_for_trade": [2180163807, 1191162539, 13334984, 15857936, 10860580, 20573078, 91675439, 44113968, 11844853, 127238392608990, 99742784495587, 128159229, 11700927610, 82601882965079, 928911381, 96678344, 10159872338, 2620478831, 6807138720, 102611965, 4773579034, 3798248888, 6803404717, 51245998, 2528067691, 3016590511],
+          "not_accepting": []
+        },
+        "algorithm": {
+          "modes": {
+            "value_only": false,
+            "trade_methods": ["downgrade"],
+            "rap_only_base": false
+          },
+          "thresholds": {
+            "min_receiving_value_when_downgrading": 1.07,
+            "max_giving_value_when_upgrading": 1,
+            "max_edge_value": 1.10,
+            "min_trade_send_value_total": 500
+          },
+          "modifiers": {
+            "base_divisor": 1200,
+            "demand_multiplier": 150,
+            "rare_multiplier": 50,
+            "lower_rap_only_item": 0.95,
+            "lower_projected_item": 0
+          },
+          "penalties": {
+            "bulk_penalty_rate": 0,
+            "upgrade_penalty_multiplier": 1.10
+          },
+          "performance": {
+            "batch_size": 3000,
+            "max_pairs": 200000
+          },
+          "upgrade": {
+            "min_items": 2,
+            "max_items": 3
+          },
+          "downgrade": {
+            "min_items": 1,
+            "max_items": 1
+          },
+          "item_ratio_constraints": {
+            "max_item_ratio_upgrade": 0.75,
+            "min_item_ratio_upgrade": 0.10
+          }
+        }
+      },
+      "webhook": "https://discord.com/api/webhooks/1411644663659630712/NPtUd14659KplTrR41XZBCVI7IbR9krjCba3yCyH4x2Yig47kuk6IfAWZVn8rauoS83o"
+    },
+    {
+      "account": {
+        "cookie": "",
+        "opt_secret": ""
+      },
+      "rolimon": {
+        "roli_verification_token": "",
+        "ads": {
+          "sleep_time": 1440,
+          "offers": []
+        },
+        "limiteds_value_updater_sleep_time": 60,
+        "manual_rolimon_items": {
+          "16477149823": ["Gold Clockwork Headphones", "GCWHP", 4924, 6000, 6000, 4, 2, -1, 1, -1]
+        }
+      },
+      "trade": {
+        "sleep_time": 1,
+        "items": {
+          "not_for_trade": [134938511887235, 127238392608990, 119040562647325, 75323696152166, 10161512424, 8853102495, 8769478056, 6807135859, 6803412842, 6803400584, 4786883113, 4786877411, 4786869155, 4773588762, 4773579034, 4773569689, 4771699155, 4771632715, 4771629993, 3798239844, 3016210752, 2830505884, 2830454962, 2620416387, 2528066922, 2470988022, 1772352570, 1609402609, 1556235379, 1556204905, 1230404580, 1191112079, 987022351, 387254823, 332772333, 293316227, 250395444, 241670187, 187483689, 164204164, 153563557, 152980734, 152980504, 145833395, 138932273, 128159229, 121925071, 121389389, 102611450, 102607079, 91675439, 76692331, 76692269, 69938945, 67250863, 63993845, 51243561, 46138556, 38971471, 35685477, 30328933, 25267790, 24826755, 24826725, 20945159, 20573078, 20064349, 19398258, 18426536, 18174901, 17408283, 11844853, 11721340, 11188705, 10468915, 1532386, 1483632],
+          "not_accepting": []
+        },
+        "algorithm": {
+          "modes": {
+            "value_only": false,
+            "trade_methods": ["downgrade"],
+            "rap_only_base": false
+          },
+          "thresholds": {
+            "min_receiving_value_when_downgrading": 1.07,
+            "max_giving_value_when_upgrading": 1,
+            "max_edge_value": 1.10,
+            "min_trade_send_value_total": 500
+          },
+          "modifiers": {
+            "base_divisor": 1200,
+            "demand_multiplier": 150,
+            "rare_multiplier": 50,
+            "lower_rap_only_item": 0.95,
+            "lower_projected_item": 0
+          },
+          "penalties": {
+            "bulk_penalty_rate": 0,
+            "upgrade_penalty_multiplier": 1.10
+          },
+          "performance": {
+            "batch_size": 3000,
+            "max_pairs": 200000
+          },
+          "upgrade": {
+            "min_items": 2,
+            "max_items": 3
+          },
+          "downgrade": {
+            "min_items": 1,
+            "max_items": 1
+          },
+          "item_ratio_constraints": {
+            "max_item_ratio_upgrade": 0.75,
+            "min_item_ratio_upgrade": 0.10
+          }
+        }
+      },
+      "webhook": "https://discord.com/api/webhooks/1411647546429935778/SC0KM-A8DakZEykPWyrvDBG4DD_0mQ5U5yuDMbUtg9k6EndYHMDZPVhNfvbtEM-yXRRN"
+    }
+  ]
 }
-
-
-
 
 
 
